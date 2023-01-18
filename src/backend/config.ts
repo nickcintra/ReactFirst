@@ -1,4 +1,5 @@
-import { initializeApp } from 'firebase/app';
+import {getAuth, onAuthStateChanged} from 'firebase/auth';
+import { getApp, getApps, initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -11,7 +12,7 @@ const firebaseConfig = {
 
 }
 
-const app = initializeApp(firebaseConfig);
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const db = getFirestore(app);
 
 export default db 
