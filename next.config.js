@@ -7,5 +7,5 @@ module.exports = {
   nextConfig,
   env: {
     customKey: 'my-value',
-  },
+  }
 }
